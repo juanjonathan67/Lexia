@@ -12,6 +12,7 @@ import Login from './login/Login.tsx';
 import Register from './register/Register.tsx';
 import ErrorPage from './errorPage/ErrorPage.tsx';
 import './index.css'
+import Level from './level/Level.tsx';
 
 const router = createBrowserRouter([
   {
@@ -25,8 +26,13 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />
   },
   {
-    path: "/",
+    path: "/register",
     element: <Register />,
+    errorElement: <ErrorPage />
+  },
+  {
+    path: "/level",
+    element: <Level />,
     errorElement: <ErrorPage />
   }
 ])
