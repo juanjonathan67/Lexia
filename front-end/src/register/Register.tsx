@@ -93,15 +93,15 @@ function Register() {
               type="submit"
               style={{ width: "900px" , fontFamily: 'Inter, sans-serif', fontWeight: 'normal' }}
               className="text-3xl h-30 rounded-full bg-purple-dark font-semibold leading-6  text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
-              Login
+              Register
             </button>
           </div>
         </form>
         <div className="absolute top-[92.5%] left-[61%] flex justify-left ">
         <p className="text-center text-2xl text-gray-500" style={{ fontFamily: 'Inter, sans-serif', fontWeight: "normal"}}>
-        Don't have an account?{' '}
+        Already have an account?{' '}
           <a href="#" className="font-semibold leading-6 text-purple-dark hover:text-indigo-500">
-            Register
+            Sign In
           </a>
         </p>
       </div>

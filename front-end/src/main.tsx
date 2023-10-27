@@ -11,6 +11,7 @@ import App from './App.tsx'
 import Login from './login/Login.tsx';
 import Register from './register/Register.tsx';
 import ErrorPage from './errorPage/ErrorPage.tsx';
+import Dashboard from './dashboard/Dashboard.tsx';
 import './index.css'
 import Level from './level/Level.tsx';
 
@@ -23,6 +24,11 @@ const router = createBrowserRouter([
   {
     path: "/login",
     element: <Login />,
+    errorElement: <ErrorPage />
+  },
+  {
+    path: "/dashboard",
+    element: <Dashboard />,
     errorElement: <ErrorPage />
   },
   {
