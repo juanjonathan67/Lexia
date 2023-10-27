@@ -1,5 +1,5 @@
 import React from 'react';
-import loginImage from '../assets/Login.png'; // Adjust the path as needed
+import loginImage from '../assets/Login.png';
 
 function Login() {
   return (
