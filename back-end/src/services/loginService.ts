@@ -4,11 +4,14 @@ import jwt from 'jsonwebtoken';
 
 // User model
 interface IUser {
+  fullname: string;
   username: string;
+  email: string;
   password: string;
 }
 
 const User = mongoose.model<IUser>('user_cred', new mongoose.Schema<IUser>({
+  fullname: { type: String, required: true },
   username: { type: String, required: true, unique: true },
   email: {type: String, required: true, unique: true},
   password: { type: String, required: true },
@@ -34,10 +37,10 @@ async function login(req: any){
 }
 
 async function register(req: any){
-  const { username, email, password } = req.body;
+  const { fullname, username, email, password } = req.body;
 
   const hashedPassword = await bcrypt.hash(password, 10);
-  const newUser = new User({ username: username, email: email, password: hashedPassword });
+  const newUser = new User({ fullname: fullname, username: username, email: email, password: hashedPassword });
   await newUser.save();
   return { message: 'User registered successfully' };
 }

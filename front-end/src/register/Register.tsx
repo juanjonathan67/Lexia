@@ -1,7 +1,32 @@
-import React from 'react';
+import React, { useState } from 'react';
 import registerImage from '../assets/Sign Up.png';
+import axios from 'axios';
+
 
 function Register() {
+  const [fullname, setFullname] = useState('');
+  const [email, setEmail] = useState('');
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleRegister = async() => {
+    const data = {
+      'fullname': fullname,
+      'username': username,
+      'password': password,
+      'email': email
+    };
+
+    console.log(data);
+
+    const resp = await axios.post(
+      'http://localhost:11111/register', 
+      data, 
+      {headers: {'content-type': 'application/x-www-form-urlencoded'}}
+    );
+
+  }
+
   return(
     <>
     <div className="h-screen flex items-center justify-center relative">
@@ -11,7 +36,6 @@ function Register() {
           Sign Up
         </label>
       </div>
-      <form>
         <div className="absolute top-[18%] left-[50.5%] flex justify-left ">
             <label className="text-black text-2xl" style={{ fontFamily: 'Inter, sans-serif', fontWeight: "normal"}}>
               Full name
@@ -23,6 +47,8 @@ function Register() {
               name="fullname"
               type="text"
               style={{ width: "550px"}}
+              value={fullname}
+              onChange={(event) => setFullname(event.target.value)}
               required
               className="block bg-purple-primary text-purple-dark text-xl pl-3 h-9 rounded-full py-1.5 ring-purple-dark ring-2 sm:leading-6"
               />        
@@ -38,6 +64,8 @@ function Register() {
               name="username"
               type="text"
               style={{ width: "550px"}}
+              value={username}
+              onChange={(event) => setUsername(event.target.value)}
               required
               className="block bg-purple-primary text-purple-dark text-xl pl-3 h-9 rounded-full py-1.5 ring-purple-dark ring-2 sm:leading-6"
               />        
@@ -53,6 +81,8 @@ function Register() {
               name="email"
               type="email"
               autoComplete="email"
+              value={email}
+              onChange={(event) => setEmail(event.target.value)}
               style={{ width: "550px"}}
               required
               className="block bg-purple-primary text-purple-dark text-xl pl-3 h-9 rounded-full py-1.5 ring-purple-dark ring-2 sm:leading-6"
@@ -68,6 +98,8 @@ function Register() {
               id="password"
               name="password"
               type="password"
+              value={password}
+              onChange={(event) => setPassword(event.target.value)}
               style={{ width: "550px"}}
               required
               className="block bg-purple-primary text-purple-dark text-xl pl-3 h-9 rounded-full py-1.5 ring-purple-dark ring-2 sm:leading-6"
@@ -91,12 +123,12 @@ function Register() {
           <div className="absolute top-[85%] left-[50.5%] flex justify-left">
             <button
               type="submit"
+              onClick={handleRegister}
               style={{ width: "550px" , fontFamily: 'Inter, sans-serif', fontWeight: 'normal' }}
               className="text-lg text-center h-10 rounded-full bg-purple-dark font-semibold leading-6  text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
               Register
             </button>
           </div>
-        </form>
         <div className="absolute top-[92.5%] left-[61%] flex justify-left ">
         <p className="text-center text-md text-gray-500" style={{ fontFamily: 'Inter, sans-serif', fontWeight: "normal"}}>
         Already have an account?{' '}

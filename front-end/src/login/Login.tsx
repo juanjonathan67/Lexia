@@ -16,7 +16,11 @@ function Login() {
 
     console.log(data);
 
-    const resp = await axios.post('http://localhost:11111/login', data, {headers: {'content-type': 'application/x-www-form-urlencoded'}});
+    const resp = await axios.post(
+      'http://localhost:11111/login', 
+      data, 
+      {headers: {'content-type': 'application/x-www-form-urlencoded'}}
+    );
 
     console.log(resp);
 
