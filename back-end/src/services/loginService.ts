@@ -10,6 +10,7 @@ interface IUser {
 
 const User = mongoose.model<IUser>('user_cred', new mongoose.Schema<IUser>({
   username: { type: String, required: true, unique: true },
+  email: {type: String, required: true, unique: true},
   password: { type: String, required: true },
 }));
 
@@ -33,10 +34,10 @@ async function login(req: any){
 }
 
 async function register(req: any){
-  const { username, password } = req.body;
+  const { username, email, password } = req.body;
 
   const hashedPassword = await bcrypt.hash(password, 10);
-  const newUser = new User({ username: username, password: hashedPassword });
+  const newUser = new User({ username: username, email: email, password: hashedPassword });
   await newUser.save();
   return { message: 'User registered successfully' };
 }
