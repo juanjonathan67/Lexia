@@ -61,8 +61,8 @@ function Sidebar() {
                 {Menus.map((menu, index) => (
                     <>
                     <li key={index} 
-                    className={`text-gray-300 text-sm flex
-                    items-center gap-x-5 cursor-pointer pl-2.5 pt-4 hover:bg-highlight-purple
+                    className={`text-gray-300 flex
+                    items-center gap-x-5 cursor-pointer pl-2.5 py-4 hover:bg-highlight-purple
                     rounded-full ${menu.spacing ? "mt-8" : "mt-2"}`}>
                         <span className='text-2xl block float-left'>
                             {menu.icon ? menu.icon : <AiFillDashboard />}
