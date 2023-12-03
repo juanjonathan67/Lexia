@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import IFrameLevel from "./levels/iframeLevel";
 import SpeechRecognition from "../api/speechRecognition";
 import TextToSpeech from "../api/textToSpeech";
 import { createWorker } from "tesseract.js";
@@ -47,7 +48,9 @@ function Level() {
 
   return(
     <>
-
+      <div>
+        <IFrameLevel url="/Lexia1/Lexia.html"/>
+      </div>
       {/* Speech Recognition */}
       {hasRecognitionSupport ? (
         <>
