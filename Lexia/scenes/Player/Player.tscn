@@ -3,8 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://cl6lltlkjg2rt" path="res://assets/Player/Small-8-Direction-Characters_by_AxulArt.png" id="1_oam54"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ee0nu"]
-radius = 6.66667
-height = 19.5556
+radius = 8.44444
+height = 22.2222
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_r7uob"]
 atlas = ExtResource("1_oam54")
@@ -258,7 +258,7 @@ animations = [{
 }]
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
-z_index = 3
+z_index = 10
 scale = Vector2(1.5, 1.5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -266,8 +266,8 @@ scale = Vector2(1.5, 1.5)
 shape = SubResource("CapsuleShape2D_ee0nu")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0.666667, -3.33333)
-scale = Vector2(1.5, 1.5)
+position = Vector2(2.38419e-07, -3.33333)
+scale = Vector2(1.75, 1.69444)
 sprite_frames = SubResource("SpriteFrames_880lg")
 animation = &"MoveDownRight"
 
