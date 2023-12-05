@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=4 format=3 uid="uid://diky7a0k56jvq"]
+
+[ext_resource type="Script" path="res://scenes/Player/Inventory/InventoryItem.gd" id="1_7nf5m"]
+[ext_resource type="Texture2D" uid="uid://b0t5eg0i31a8t" path="res://assets/Food/FOOD.png" id="2_xy3oa"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bbjyu"]
+atlas = ExtResource("2_xy3oa")
+region = Rect2(261, 549, 15, 22)
+
+[resource]
+script = ExtResource("1_7nf5m")
+name = "Guava"
+texture = SubResource("AtlasTexture_bbjyu")

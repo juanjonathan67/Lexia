@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @export var SPEED = 50
+@export var INVENTORY: Inventory
 
 @onready var axis = Vector2.ZERO
 @onready var animations = $AnimatedSprite2D

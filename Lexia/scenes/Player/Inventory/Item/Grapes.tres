@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=4 format=3 uid="uid://uqhnjhmgu6fv"]
+
+[ext_resource type="Script" path="res://scenes/Player/Inventory/InventoryItem.gd" id="1_uowu3"]
+[ext_resource type="Texture2D" uid="uid://b0t5eg0i31a8t" path="res://assets/Food/FOOD.png" id="2_8fqwc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ycsjo"]
+atlas = ExtResource("2_8fqwc")
+region = Rect2(287, 527, 17, 18)
+
+[resource]
+script = ExtResource("1_uowu3")
+name = "Grapes"
+texture = SubResource("AtlasTexture_ycsjo")

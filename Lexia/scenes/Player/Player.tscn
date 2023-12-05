@@ -1,6 +1,7 @@
-[gd_scene load_steps=28 format=3 uid="uid://b5b8g2cnr7nad"]
+[gd_scene load_steps=29 format=3 uid="uid://b5b8g2cnr7nad"]
 
 [ext_resource type="Texture2D" uid="uid://cl6lltlkjg2rt" path="res://assets/Player/Small-8-Direction-Characters_by_AxulArt.png" id="1_oam54"]
+[ext_resource type="PackedScene" uid="uid://c148o7iswlemf" path="res://scenes/Player/Inventory/InventoryUI.tscn" id="2_k6skt"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ee0nu"]
 radius = 8.44444
@@ -280,3 +281,5 @@ limit_bottom = 648
 position_smoothing_enabled = true
 rotation_smoothing_enabled = true
 editor_draw_limits = true
+
+[node name="InventoryUI" parent="." instance=ExtResource("2_k6skt")]

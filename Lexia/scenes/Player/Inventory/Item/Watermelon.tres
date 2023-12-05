@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=4 format=3 uid="uid://4xfpyks0jno5"]
+
+[ext_resource type="Script" path="res://scenes/Player/Inventory/InventoryItem.gd" id="1_fvrh2"]
+[ext_resource type="Texture2D" uid="uid://b0t5eg0i31a8t" path="res://assets/Food/FOOD.png" id="2_ow152"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oqoay"]
+atlas = ExtResource("2_ow152")
+region = Rect2(443, 554, 19, 17)
+
+[resource]
+script = ExtResource("1_fvrh2")
+name = "Watermelon"
+texture = SubResource("AtlasTexture_oqoay")

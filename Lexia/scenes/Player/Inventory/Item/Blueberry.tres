@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=4 format=3 uid="uid://d158hdksa7lhn"]
+
+[ext_resource type="Script" path="res://scenes/Player/Inventory/InventoryItem.gd" id="1_ynjly"]
+[ext_resource type="Texture2D" uid="uid://b0t5eg0i31a8t" path="res://assets/Food/FOOD.png" id="2_qk7k6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7vvs0"]
+atlas = ExtResource("2_qk7k6")
+region = Rect2(287, 578, 20, 18)
+
+[resource]
+script = ExtResource("1_ynjly")
+name = "Blueberry"
+texture = SubResource("AtlasTexture_7vvs0")

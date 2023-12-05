@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=4 format=3 uid="uid://cmrrm7lveuep0"]
+
+[ext_resource type="Script" path="res://scenes/Player/Inventory/InventoryItem.gd" id="1_2sc7s"]
+[ext_resource type="Texture2D" uid="uid://b0t5eg0i31a8t" path="res://assets/Food/FOOD.png" id="2_uoyym"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0yv6v"]
+atlas = ExtResource("2_uoyym")
+region = Rect2(235, 579, 15, 18)
+
+[resource]
+script = ExtResource("1_2sc7s")
+name = "Dragonfruit"
+texture = SubResource("AtlasTexture_0yv6v")

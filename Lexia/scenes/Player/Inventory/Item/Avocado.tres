@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=4 format=3 uid="uid://b5mwneh53dhu2"]
+
+[ext_resource type="Script" path="res://scenes/Player/Inventory/InventoryItem.gd" id="1_1fgdg"]
+[ext_resource type="Texture2D" uid="uid://b0t5eg0i31a8t" path="res://assets/Food/FOOD.png" id="2_ut2mq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sbaqe"]
+atlas = ExtResource("2_ut2mq")
+region = Rect2(495, 503, 16, 16)
+
+[resource]
+script = ExtResource("1_1fgdg")
+name = "Avocado"
+texture = SubResource("AtlasTexture_sbaqe")
