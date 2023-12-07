@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://b8a3c83beyipf"]
+[gd_scene load_steps=31 format=3 uid="uid://b8a3c83beyipf"]
 
 [ext_resource type="Script" path="res://scenes/Lexia.gd" id="1_gw7un"]
 [ext_resource type="Texture2D" uid="uid://26sdwahfceoo" path="res://assets/TinyTownTile/Tilemap/tilemap_packed.png" id="2_spdir"]
@@ -11,7 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://blvl8iwpq3lb7" path="res://assets/FarmTile/Tilemap/tilemap_packed.png" id="8_d4blw"]
 [ext_resource type="PackedScene" uid="uid://b5b8g2cnr7nad" path="res://scenes/Player/Player.tscn" id="9_0wxrk"]
 [ext_resource type="Script" path="res://scenes/Player/Player.gd" id="10_156rb"]
-[ext_resource type="Resource" uid="uid://cbkqpdunqtb8c" path="res://scenes/Player/Inventory/PlayerInventory.tres" id="12_yussa"]
+[ext_resource type="Resource" uid="uid://cs8tvphutpuhy" path="res://scenes/Player/Inventory/PlayerInventory.tres" id="12_yussa"]
+[ext_resource type="PackedScene" uid="uid://c148o7iswlemf" path="res://scenes/Player/Inventory/InventoryUI.tscn" id="13_yfswn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o8omi"]
 resource_name = "StreetGround"
@@ -5178,3 +5179,10 @@ position = Vector2(95, 120)
 scale = Vector2(0.5, 0.5)
 script = ExtResource("10_156rb")
 INVENTORY = ExtResource("12_yussa")
+
+[node name="InventoryUI" parent="Player" instance=ExtResource("13_yfswn")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
