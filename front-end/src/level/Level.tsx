@@ -48,9 +48,6 @@ function Level() {
 
   return(
     <>
-      <div>
-        <IFrameLevel url="/Lexia1/Lexia.html"/>
-      </div>
       {/* Speech Recognition */}
       {hasRecognitionSupport ? (
         <>
@@ -64,7 +61,7 @@ function Level() {
 
           {isListening ? <div>Your browser is currently listening</div> : null}
           {text}
-
+          <br></br>
         </>
       ) : (
         <h1>Your browser has no speech recognition support</h1>
@@ -76,6 +73,7 @@ function Level() {
         <>
           <label>
             Text to speech : 
+            <br></br>
             <textarea value={speechText} onChange={event => setSpeechText(event.target.value)} rows={4} cols={40}/>
             <div>
               <button onClick={() => startSpeaking(speechText)}>Start Speaking</button>
@@ -94,6 +92,7 @@ function Level() {
           <h1>Input Image</h1>
           <div>
             <label htmlFor="upload">Upload Image</label>
+            <br></br>
             <input type="file" id="upload" accept="image/*" onChange={handleChangeImage} />
           </div>
 
