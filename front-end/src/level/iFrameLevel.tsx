@@ -13,7 +13,7 @@ function IFrameLevel(props : ChildComponentProps){
                     position="absolute"
                     width="100%"
                     height="100%"
-                    sandbox={["allow-same-origin", "allow-scripts"]}/>
+                    sandbox={["allow-same-origin", "allow-scripts", "allow-popups", "allow-popups-to-escape-sandbox"]}/>
         </>
     );
 }

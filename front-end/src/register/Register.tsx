@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import registerImage from '../assets/Sign Up.png';
-import axios from 'axios';
+import axios, { AxiosError } from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 
 function Register() {
@@ -9,23 +10,39 @@ function Register() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleRegister = async() => {
-    const data = {
-      'fullname': fullname,
-      'username': username,
-      'password': password,
-      'email': email
-    };
+  const navigate = useNavigate();
 
-    console.log(data);
+  const handleRegister = async () => {
+    try {
+      const data = {
+        'fullname': fullname,
+        'username': username,
+        'password': password,
+        'email': email
+      };
 
-    const resp = await axios.post(
-      'http://localhost:11111/register', 
-      data, 
-      {headers: {'content-type': 'application/x-www-form-urlencoded'}}
-    );
+      const resp = await axios.post(
+        'http://localhost:11111/register',
+        data,
+        { headers: { 'content-type': 'application/x-www-form-urlencoded' } }
+      );
 
-  }
+      console.log(resp);
+
+      // Check for a successful registration, adjust based on your API response structure
+      if (resp.status === 200) {
+        // Use Navigate to redirect to /login after successful registration
+        navigate("/login");
+        return 
+      } else {
+        // Handle unsuccessful registration (you might want to show an error message)
+        console.error('Registration failed:', resp.data.error);
+      }
+    } catch (error : any) {
+      // Handle any other errors that occurred during the registration process
+      console.error('An error occurred during registration:', error.message);
+    }
+  };
 
   return(
     <>
@@ -112,12 +129,12 @@ function Register() {
           </div>
           <div className="absolute top-[76%] left-[50.5%] w-200 flex justify-left ">
             <input
-              id="password"
-              name="password"
+              id="password-confirm"
+              name="password-confirm"
               type="password"
               style={{ width: "550px"}}
               required
-              className="block bg-purple-primary text-purple-dark text-3xl pl-3 h-9 rounded-full py-1.5 ring-purple-dark ring-2 sm:leading-6"
+              className="block bg-purple-primary text-purple-dark text-xl pl-3 h-9 rounded-full py-1.5 ring-purple-dark ring-2 sm:leading-6"
               />        
           </div>
           <div className="absolute top-[85%] left-[50.5%] flex justify-left">

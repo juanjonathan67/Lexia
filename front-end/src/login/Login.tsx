@@ -1,30 +1,41 @@
 import loginImage from '../assets/Login.png';
 import React, { useState } from 'react';
-import qs from 'qs';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 
 function Login() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
+  const navigate = useNavigate();
+
   const handleLogin = async () => {
-    const data = { 
-      'username' : username, 
-      'password' : password
+    const data = {
+      'username': username,
+      'password': password
     };
-
-    console.log(data);
-
-    const resp = await axios.post(
-      'http://localhost:11111/login', 
-      data, 
-      {headers: {'content-type': 'application/x-www-form-urlencoded'}}
-    );
-
-    console.log(resp);
-
-    console.log("token : " + resp.data.token);
+  
+    try {
+      const resp = await axios.post(
+        'http://localhost:11111/login',
+        data,
+        { headers: { 'content-type': 'application/x-www-form-urlencoded' } }
+      );
+  
+      // Check if resp and resp.data are defined before accessing the token
+      if (resp && resp.data && resp.data.token) {
+        localStorage.setItem('token', resp.data.token);
+        console.log('Login successful');
+        
+        // Use Navigate to redirect to /level after successful login
+        navigate("/level");
+      } else {
+        console.log('Invalid credentials or missing token in response');
+      }
+    } catch (error) {
+      console.error('Error during login:', error);
+    }
   };
 
 
@@ -79,9 +90,9 @@ function Login() {
             Login
           </button>
         </div>
-      <div className="absolute top-[73%] left-[22%] flex justify-left ">
-        <p className="text-center text-sm text-gray-500" style={{ fontFamily: 'Inter, sans-serif', fontWeight: "normal"}}>
-        Don't have an account?{' '}
+        <div className="absolute top-[73%] left-[22%] flex justify-left ">
+          <p className="text-center text-sm text-gray-500" style={{ fontFamily: 'Inter, sans-serif', fontWeight: "normal"}}>
+          Don't have an account?{' '}
           <a href="#" className="font-semibold leading-6 text-purple-dark hover:text-indigo-500">
             Register
           </a>

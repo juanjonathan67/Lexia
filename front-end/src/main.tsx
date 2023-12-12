@@ -15,7 +15,7 @@ import Dashboard from './dashboard/Dashboard.tsx';
 import Levelselection from './levelSelection/Levelselection.tsx';
 import './index.css'
 import Level from './level/Level.tsx';
-import Level1 from './level/Level1.tsx';
+import Level1 from './level/levels/Level1.tsx';
 
 const router = createBrowserRouter([
   {
@@ -54,15 +54,6 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />
   }
 ])
-
-// const router = createBrowserRouter(
-//   createRoutesFromElements(
-//     <Route path="/" element={<App />} errorElement={<ErrorPage />}>
-//       <Route path="login" element={<Login />} errorElement={<ErrorPage />}></Route>
-//       <Route path="register" element={<Register />} errorElement={<ErrorPage />}></Route>
-//     </Route>
-//   )
-// )
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
