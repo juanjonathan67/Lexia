@@ -6,6 +6,8 @@ import jwt from 'jsonwebtoken';
 import cors from 'cors';
 import connectDB from './src/config/connectDB'
 import loginRoutes from './src/routes/loginRoutes'
+import userRoutes from './src/routes/userRoutes'
+import 'dotenv/config'
 
 const app = express();
 const PORT = 11111;
@@ -19,9 +21,10 @@ connectDB.connectDB();
 
 //Routes
 app.use("/", loginRoutes);
+app.use("/", userRoutes);
 
 // Start server
 const listen = () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
+  console.log(`Server is running on http://localhost:${process.env.PORT}`);
 }
 app.listen(PORT, listen);

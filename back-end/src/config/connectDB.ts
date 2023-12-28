@@ -1,9 +1,12 @@
 import mongoose from 'mongoose'
+import 'dotenv/config'
+
+const mongoUrl = process.env.MONGO_URL as string;
 
 const connectDB = async () =>{
   try{
     mongoose.connect(
-      'mongodb+srv://backend:CkwhMVefHzzGvQR8@lexia.qpa1cem.mongodb.net/backend'
+      mongoUrl
     );
   }catch(error){
     console.log(error);

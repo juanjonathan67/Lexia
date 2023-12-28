@@ -61,7 +61,7 @@ function Login() {
             value={username}
             onChange={(event) => setUsername(event.target.value)}
             required
-            className="block text-black bg-purple-primary h-10 rounded-full py-1.5 ring-purple-dark ring-2 sm:text-sm sm:leading-6"
+            className="block text-black text-2xl bg-purple-primary h-10 rounded-full py-1.5 ring-purple-dark ring-2 sm:text-sm sm:leading-6"
             />        
         </div>
         <div className="absolute top-[42%] left-[13%] flex justify-left ">
@@ -78,7 +78,7 @@ function Login() {
             value={password}
             onChange={(event) => setPassword(event.target.value)}
             required
-            className="block text-black bg-purple-primary h-10 w-[450px] rounded-full py-1.5 ring-purple-dark ring-2 sm:text-sm sm:leading-6"
+            className="block text-black text-2xl bg-purple-primary h-10 w-[450px] rounded-full py-1.5 ring-purple-dark ring-2 sm:text-sm sm:leading-6"
           />
         </div>
         <div className="absolute top-[64%] left-[13%] flex justify-left">

@@ -7,14 +7,17 @@ import { AiFillDashboard } from "react-icons/ai";
 import { LuLayoutDashboard } from "react-icons/lu";
 import { IoSettingsOutline } from "react-icons/io5";
 import { GiSelfLove } from "react-icons/gi";
+import { useNavigate } from 'react-router-dom';
 
 function Sidebar() {    
     const [open, setOpen] = useState(true);
+    const navigate = useNavigate();
+
     const Menus = [
-        { title: "Dashboard", spacing: true},
-        { title: "Profile",  spacing: true, icon: <BsFillPersonFill/> },
-        { title: "Levels",   spacing: true, icon: <LuLayoutDashboard/>},
-        { title: "Settings",  spacing: true, icon: <IoSettingsOutline/>}
+        { title: "Login", route: '/login', spacing: true},
+        { title: "Profile", route: '/', spacing: true, icon: <BsFillPersonFill/> },
+        { title: "Levels", route: '/level', spacing: true, icon: <LuLayoutDashboard/>},
+        { title: "Settings", route: '/', spacing: true, icon: <IoSettingsOutline/>}
     ];
 
     return (
@@ -31,7 +34,7 @@ function Sidebar() {
                 text-5xl rounded cursor-pointer block float-left mr-2
                 duration-500 ${open && "rotate-[360deg]"}`}/>
                 <h1 className={`text-white origin-left font-medium
-                text-5xl duration-300 ${!open && "scale-0"}`}>
+                text-5xl duration-300 ${!open && "scale-0"}`} onClick={() => {navigate('/')}}>
                     Lexia
                 </h1>
                 <h1 className={`absolute bottom-[30%] left-[5%] text-white origin-left 
@@ -68,7 +71,7 @@ function Sidebar() {
                             {menu.icon ? menu.icon : <AiFillDashboard />}
                         </span>
                         <span className={`text-2xl font-medium flex-1
-                        duration-300 ${!open && "scale-0"}`}> {menu.title} </span>
+                        duration-300 ${!open && "scale-0"}`} onClick={() => {navigate(menu.route)}}> {menu.title} </span>
                     </li>
                     </>
                 ))}
