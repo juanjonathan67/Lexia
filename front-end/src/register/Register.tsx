@@ -149,9 +149,9 @@ function Register() {
         <div className="absolute top-[92.5%] left-[61%] flex justify-left ">
         <p className="text-center text-md text-gray-500" style={{ fontFamily: 'Inter, sans-serif', fontWeight: "normal"}}>
         Already have an account?{' '}
-          <a href="#" className="font-semibold leading-6 text-purple-dark hover:text-indigo-500">
+          <p className="font-semibold leading-6 text-purple-dark hover:text-indigo-500" onClick={() => navigate('/login')}>
             Sign In
-          </a>
+          </p>
         </p>
       </div>
     </div>

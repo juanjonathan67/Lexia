@@ -27,4 +27,3 @@ func _process(delta):
 					var url = "http://localhost:5173/level" + str(index)
 					OS.shell_open(url)
 		index += 1
-	

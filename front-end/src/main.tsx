@@ -16,6 +16,8 @@ import Levelselection from './levelSelection/Levelselection.tsx';
 import './index.css'
 import Level from './level/Level.tsx';
 import Level1 from './level/levels/Level1.tsx';
+import Level2 from './level/levels/Level2.tsx';
+import Level3 from './level/levels/Level3.tsx';
 
 const router = createBrowserRouter([
   {
@@ -51,6 +53,16 @@ const router = createBrowserRouter([
   {
     path: "/level1",
     element: <Level1 />,
+    errorElement: <ErrorPage />
+  },
+  {
+    path: "/level2",
+    element: <Level2 />,
+    errorElement: <ErrorPage />
+  },
+  {
+    path: "/level3",
+    element: <Level3 />,
     errorElement: <ErrorPage />
   }
 ])

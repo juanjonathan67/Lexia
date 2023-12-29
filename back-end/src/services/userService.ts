@@ -12,6 +12,8 @@ interface JwtPayload {
 async function updateProgress(req: any) {
   const { progress } = req.body;
   const token = req.headers["x-access-token"];
+
+  console.log(req);
   
   let decoded = null;
   

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import SpeechRecognition from "../../api/speechRecognition";
+import axios from "axios";
 
 import Apple from "./LevelAssets/Apple.png";
 import Mic from "./LevelAssets/mic.svg";
@@ -18,12 +19,36 @@ function Level1() {
     hasRecognitionSupport,
   } = SpeechRecognition();
 
+  async function handleFinish() {
+    if(currentLetterIndex === spelling.length ){
+      const data = {
+        progress: 1
+      }
+
+      const resp = await axios.put(
+        'http://localhost:11111/updateProgress',
+        data,
+        { headers : {'x-access-token': localStorage.getItem('token')} }
+      );
+
+      if (resp.data.progress === 1){
+        console.log("Progress saved");
+        window.close();
+      }
+
+    }else{
+      return;
+    }
+  }
+
   // useEffect to handle successful speech recognition
   useEffect(() => {
     // Check if the recognized text matches the current letter
     if (text && text.toUpperCase() === answer[currentLetterIndex]) {
       // Increment the index to move to the next letter
       setCurrentLetterIndex((prevIndex) => prevIndex + 1);
+
+      handleFinish();
     }
   }, [text, currentLetterIndex]);
 

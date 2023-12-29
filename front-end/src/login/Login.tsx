@@ -26,6 +26,7 @@ function Login() {
       // Check if resp and resp.data are defined before accessing the token
       if (resp && resp.data && resp.data.token) {
         localStorage.setItem('token', resp.data.token);
+        localStorage.setItem('progress', resp.data.progress);
         console.log('Login successful');
         
         // Use Navigate to redirect to /level after successful login
@@ -61,7 +62,7 @@ function Login() {
             value={username}
             onChange={(event) => setUsername(event.target.value)}
             required
-            className="block text-black text-2xl bg-purple-primary h-10 rounded-full py-1.5 ring-purple-dark ring-2 sm:text-sm sm:leading-6"
+            className="block bg-purple-primary text-purple-dark text-xl pl-3 h-9 rounded-full py-1.5 ring-purple-dark ring-2 sm:leading-6"
             />        
         </div>
         <div className="absolute top-[42%] left-[13%] flex justify-left ">
@@ -74,11 +75,12 @@ function Login() {
             id="password"
             name="password"
             type="password"
+            style={{ width: "450px" }}
             autoComplete="current-password"
             value={password}
             onChange={(event) => setPassword(event.target.value)}
             required
-            className="block text-black text-2xl bg-purple-primary h-10 w-[450px] rounded-full py-1.5 ring-purple-dark ring-2 sm:text-sm sm:leading-6"
+            className="block bg-purple-primary text-purple-dark text-xl pl-3 h-9 rounded-full py-1.5 ring-purple-dark ring-2 sm:leading-6"
           />
         </div>
         <div className="absolute top-[64%] left-[13%] flex justify-left">
@@ -93,9 +95,9 @@ function Login() {
         <div className="absolute top-[73%] left-[22%] flex justify-left ">
           <p className="text-center text-sm text-gray-500" style={{ fontFamily: 'Inter, sans-serif', fontWeight: "normal"}}>
           Don't have an account?{' '}
-          <a href="#" className="font-semibold leading-6 text-purple-dark hover:text-indigo-500">
+          <p className="font-semibold leading-6 text-purple-dark hover:text-indigo-500" onClick={() => navigate("/register")}>
             Register
-          </a>
+          </p>
         </p>
       </div>
     </div>
